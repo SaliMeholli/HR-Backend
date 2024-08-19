@@ -3,6 +3,7 @@ import { AppController } from './app.controller';
 import { AppService } from './app.service';
 import { TypeOrmModule } from '@nestjs/typeorm';
 import { UsersModule } from './users/users.module';
+import { DepartmentsModule } from './departments/departments.module';
 
 @Module({
   imports: [TypeOrmModule.forRoot({
@@ -13,7 +14,7 @@ import { UsersModule } from './users/users.module';
     database: "hr-database",
     entities: [__dirname + '/../**/*.entity.js'],
     synchronize: true,
-  }), UsersModule],
+  }), UsersModule, DepartmentsModule],
   
   controllers: [AppController],
   providers: [AppService],
