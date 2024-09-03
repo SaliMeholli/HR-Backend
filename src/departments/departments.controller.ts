@@ -23,8 +23,8 @@ export class DepartmentsController {
     }
 
     @Patch(':id')
-    update(@Param('id') id: string, @Body() UpdateDepartmentDto: UpdateDepartmentDto) {
-        return this.departmentsService.update(+id, UpdateDepartmentDto);
+    update(@Param('id') id: string, @Body() updateDepartmentDto: UpdateDepartmentDto) {
+        return this.departmentsService.update(+id, updateDepartmentDto);
     }
 
     @Delete(':id')
