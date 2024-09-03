@@ -20,9 +20,20 @@ export class UsersService {
     private readonly userRepo: Repository<User>,
   ) { }
   async create(createUserDto: CreateUserDto) {
+    console.log(createUserDto);
     const newUser = new User();
     newUser.name = createUserDto.name;
-    newUser.password = createUserDto.name;
+    newUser.surname = createUserDto.surname;
+    newUser.email = createUserDto.email;
+    newUser.role = createUserDto.role;
+    newUser.phoneNumber = createUserDto.phoneNumber;
+    newUser.status = createUserDto.status;
+    newUser.hireDate = createUserDto.hireDate;
+    newUser.manager = createUserDto.manager;
+    newUser.salary = createUserDto.salary;
+    newUser.employmentType = createUserDto.employmentType;
+    newUser.notes = createUserDto.notes;
+    
 
     return await this.userRepo.save(newUser); 
 
