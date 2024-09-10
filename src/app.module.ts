@@ -4,6 +4,7 @@ import { AppService } from './app.service';
 import { TypeOrmModule } from '@nestjs/typeorm';
 import { UsersModule } from './users/users.module';
 import { DepartmentsModule } from './departments/departments.module';
+import { LeaveModule } from './leave/leave.module';
 
 @Module({
   imports: [TypeOrmModule.forRoot({
@@ -14,7 +15,7 @@ import { DepartmentsModule } from './departments/departments.module';
     database: "hr-database",
     entities: [__dirname + '/../**/*.entity.js'],
     synchronize: true,
-  }), UsersModule, DepartmentsModule],
+  }), UsersModule, DepartmentsModule,  LeaveModule],
   
   controllers: [AppController],
   providers: [AppService],
